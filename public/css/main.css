@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050f19; }
+
+.navbar-inverse {
+  background-color: #004f9f;
+  padding: 0 20px; }
+  .navbar-inverse > .navbar-nav > li > a {
+    background-color: #014991; }
+  .navbar-inverse > .navbar-nav > li .top-logo {
+    background-image: url("/img/logo.png");
+    background-repeat: no-repeat;
+    background-size: 54px 26px;
+    height: 26px;
+    width: 54px; }
