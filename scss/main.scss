@@ -1,6 +1,7 @@
 $bg-color: #050f19;
 $nav-bg-color: #004f9f;
 $nav-item-bg: #014991;
+$white: #fff;
 
 body {
   margin: 0;
@@ -22,7 +23,18 @@ body {
       background-repeat: no-repeat;
       background-size: 54px 26px;
       height: 26px;
-    width: 54px;
+      width: 54px;
     }
   }
+}
+
+#main{
+  background-color: $white;
+      min-height: 500px;
+}
+
+#footer{
+  padding: 20px 0;
+  background-color: $nav-bg-color;
+  color: $white;
 }
