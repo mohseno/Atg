@@ -2,6 +2,7 @@ $bg-color: #050f19;
 $nav-bg-color: #004f9f;
 $nav-item-bg: #014991;
 $white: #fff;
+$table-header-bg: #65acdc;
 
 body {
   margin: 0;
@@ -31,6 +32,47 @@ body {
 #main{
   background-color: $white;
       min-height: 500px;
+}
+
+.track-item{
+  color: $nav-item-bg;
+  -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  background-image: -webkit-linear-gradient(top,#fff,#dbe4ef);
+  background-image: linear-gradient(180deg,#fff 0,#dbe4ef);
+  background-repeat: repeat-x;
+  border: 1px solid #bacbdf;
+  border-bottom-width: 2px;
+  padding: 10px;
+  text-transform: uppercase;
+  cursor: auto;
+
+  &__header{
+      font-weight: 600;
+  }
+}
+
+.track-result{
+  margin: 20px 0;
+
+  th{
+    background-color: $table-header-bg;
+    color: $white;
+  }
+
+}
+
+
+.loading-container{
+  text-align: center;
+  height: 54px;
+  &__loading-bg{
+    background-image: url("/img/loading.gif");
+    background-repeat: no-repeat;
+    background-size: 54px 54px;
+    height: 54px;
+    width: 54px;
+  }
 }
 
 #footer{

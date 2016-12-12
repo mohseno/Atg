@@ -1,5 +1,6 @@
 import React from 'react';
 import DdTrack from './DdTrack';
+import DdResult from './DdResult';
 
 class DdTracks extends React.Component {
     constructor(props) {
@@ -9,10 +10,13 @@ class DdTracks extends React.Component {
 
     render() {
         return (
-          <div className="tracks">
-            {this.state.items.map((item) =>
-              <DdTrack item={item} />
-            )}
+          <div className="tracks-container">
+            <div className="tracks">
+              {this.state.items.map((item) =>
+                <DdTrack item={item} />
+              )}
+            </div>
+            <DdResult itemid={"dd_2016-12-11_9_9"} />
           </div>
       );
     }

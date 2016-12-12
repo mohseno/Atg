@@ -16,16 +16,33 @@ app.get('/api/ddresults', function(req, res) {
   const request = require('request');
 
   request(url, (error, response, body)=> {
-  if (!error && response.statusCode === 200) {
-    const atgResponse = JSON.parse(body)
-    res.send(atgResponse.results);
-  } else {
-    console.log("Got an error: ", error, ", status code: ", response.statusCode);
-  }
-})
+    if (!error && response.statusCode === 200) {
+      const atgResponse = JSON.parse(body)
+      res.send(atgResponse.results);
+    } else {
+      console.log("Got an error: ", error, ", status code: ", response.statusCode);
+    }
+  })
+
+});
+
+app.get('/api/ddresult/:id', function(req, res) {
+  /* Process request, send response */
+  var url = 'https://www.atg.se/services/v1/games/' + req.params.id;
+  const request = require('request');
+
+  request(url, (error, response, body)=> {
+    if (!error && response.statusCode === 200) {
+      const atgResponse = JSON.parse(body)
+      res.send(atgResponse.pools.dd.result);
+    } else {
+      console.log("Got an error: ", error, ", status code: ", response.statusCode);
+    }
+  })
 
 
 });
+
 
 app.get('/', function(request, response) {
   response.render('pages/index');
