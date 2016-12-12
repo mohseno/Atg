@@ -5,18 +5,26 @@ import DdResult from './DdResult';
 class DdTracks extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {items: []};
+      this.state = {items: undefined};
     }
 
     render() {
+        if ( !this.state.items ) {
+           return <div className="col-xs-12 loading-container"><span className="loading-container__loading-bg"></span></div>
+        }
         return (
           <div className="tracks-container">
             <div className="tracks">
               {this.state.items.map((item) =>
-                <DdTrack item={item} />
+                <DdTrack item={item} handler={ this.handleClick } />
               )}
             </div>
-            <DdResult itemid={"dd_2016-12-11_9_9"} />
+            <div className="tab-content">
+              {this.state.items.map((item) =>
+                <DdResult itemid={item.id} />
+              )}
+
+            </div>
           </div>
       );
     }

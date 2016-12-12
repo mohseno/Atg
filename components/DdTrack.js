@@ -7,8 +7,10 @@ class DdTrack extends React.Component {
         var d = new Date(data.startTime).toLocaleDateString();
         return (
           <div className="col-xs-12 col-md-2 track-item" >
+            <a href={"#" + data.id} data-toggle="tab">
               <p className="track-item__header">{data.tracks[0].name}</p>
-              <p>Datum: {d}</p>
+              <p>{d}</p>
+            </a>
           </div>
         )
     }

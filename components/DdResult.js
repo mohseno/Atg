@@ -5,31 +5,17 @@ export default class DdResult extends React.Component {
   constructor(props) {
     super(props);
     this.state = {item: undefined };
-
-    var url = '/api/ddresult/' + this.props.itemid;
-
-    fetch(url).then((response) => {
-        return response.json();
-    }).then((data) => {
-      console.log(data);
-        this.setState({item: data});
-
-    }).catch((err) => {
-        throw new Error(err);
-    });
   }
 
   render() {
 
     // Handle case where the response is not here yet
     if ( !this.state.item ) {
-       // Note that you can return false it you want nothing to be put in the dom
-       // This is also your chance to render a spinner or something...
        return <div className="col-xs-12 loading-container"><span className="loading-container__loading-bg"></span></div>
     }
 
     return (
-      <div className="row">
+      <div className="row tab-pane" role="tabpanel" id={this.props.itemid}>
         <div className="track-result col-xs-12 col-sm-4 ">
           <table className="table table-bordered">
             <thead>
@@ -64,6 +50,18 @@ export default class DdResult extends React.Component {
     );
   }
 
+  componentDidMount() {
+    var url = '/api/ddresult/' + this.props.itemid;
 
+    fetch(url).then((response) => {
+        return response.json();
+    }).then((data) => {
+      console.log(data);
+        this.setState({item: data});
+
+    }).catch((err) => {
+        throw new Error(err);
+    });
+  }
 
 }
