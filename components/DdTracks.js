@@ -9,11 +9,11 @@ class DdTracks extends React.Component {
 
     render() {
         return (
-        <div className="tracks">
-          {this.state.items.map((item) =>
-            <DdTrack item={item} />
-          )}
-        </div>
+          <div className="tracks">
+            {this.state.items.map((item) =>
+              <DdTrack item={item} />
+            )}
+          </div>
       );
     }
 
