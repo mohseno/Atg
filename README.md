@@ -1,4 +1,4 @@
-# Atg
+# ATG
 
 ### Usage
 
